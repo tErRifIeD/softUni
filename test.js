@@ -1,28 +1,14 @@
-function Solve(args) {
-    let n = Number(args.shift());
+function addSubtract(numOne, numTwo, numThree) {
+    let result = subtract(sum(numOne, numTwo), numThree);
+    console.log(result);
 
-    let firstNum = Math.floor((n / 100) % 10);
-    let secondNum = Math.floor((n / 10) % 10);
-    let thirdNum = n % 10;
+    function sum(a, b) {
+        return a + b;
+    }
 
-    let N = firstNum + secondNum;
-    let M = firstNum + thirdNum;
-
-    for (let i = 0; i < N; i++) {
-        let result = "";
-        for (let j = 0; j < M; j++) {
-            if (n % 5 === 0) {
-                n -= firstNum;
-            } else if (n % 3 === 0) {
-                n -= secondNum;
-            } else if (n % 5 != 0 && n % 3 != 0) {
-                n += thirdNum;
-            }
-
-            result += n + " ";
-        }
-        console.log(result);
+    function subtract(a, b) {
+        return a - b;
     }
 }
 
-Solve([376]);
+addSubtract(23, 6, 10);
